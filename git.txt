@@ -1,0 +1,109 @@
+to change unstaged changes in file
+git diff   filename 
+
+
+git diff --staged filename
+it will delete the file from git and locally
+
+git rm filename 
+
+deleting a file is always a change:
+git commit -m "deleting files"
+
+how to delete file from  (local repo only)  only 
+git rm --cached index.html
+
+To keep some files not to be tracked 
+.gitignore
+
+
+Assigning tags in git 
+git tag --a v1 2c680d3 -m "first tag"
+git show v1
+
+how to check all git tags
+git tag
+
+Reverting :
+Undoing commit:
+   git revert eeb927d
+need to give message as well
+
+How to remove git log(history)
+git reset --hard commit id (destructive command)
+
+commit will move to HEAD it does not create any commit id 
+it can not be reverted (not recommended )
+
+
+    Branches:
+      master : default branch
+parallel development 
+new feature branch
+git branch   to check branches
+git checkout -b b1 
+
+
+git log --oneline b1   to check b1 branch history
+
+
+if we have same file in both brach  while merging it will have conflicts
+we have to reolve it 
+
+edit the file we want it to be 
+remove <<<  ----
+and commit it 
+git commit -a -m "reolved conflicts"  merged file will be in master brach as we are merging here.
+
+
+
+Git stash:
+  to commit in an emergency with unstaged ,putting some files to hold to make the working directory clean
+it move the unstagged changes to some temp files and make the working directory clean
+it will work with existing files which are the part of stagging ares
+  
+  git stash list
+ git show stash@{0}
+git stash pop   stash@{0}  it will delete the stash as well.
+
+git stash apply stashno     -it will not drop the stash
+
+how to stash unstagged files
+git stash -u
+git stash clear 
+
+
+Rebase:
+ while merging it will add a new commit id
+ on rebase 
+you change the base of the branch :
+
+
+a913118 added
+e531b1c m
+631f4ff 1
+
+40b1158 added
+51cf323 added
+e531b1c m
+631f4ff 1
+commit id will be changes:
+
+Remote Repository:
+git remote add origin url 
+
+git push origin master
+origin :it holds remote repo url (variable/keyword)
+
+git pull origin    fetch +merge(download)
+git fetch origin   it will not download just will show the changes.
+
+
+
+
+
+
+
+
+
+
